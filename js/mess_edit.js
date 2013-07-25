@@ -11,82 +11,11 @@ function on_td_click(e)
 	//$(e).parent().toggleClass('inactive');
 	$(e).toggleClass('active');
 	get_meal_total($(e).parent().parent().parent().attr('id'));
+	
+	get_and_send_choices();
 
 }
 
-function get_courses()
-{
-	courses = [];
-
-
-	$('#courses tr').each(function(i, val) {
-
-		if(i==0)
-			return true;
-
-		eles = [];
-
-		$(this).children().each(function(j, vall) {
-
-			if(j==0)
-				eles[j] = $(vall).find('input').val();
-			else
-				eles[j] = $(vall).html();
-		//	console.log($(vall).html());
-
-
-		});
-
-		console.log(eles);
-
-		courses[i-1] = eles;
-
-
-	 });
-
-	console.log(courses);
-
-	return courses;
-
-}
-
-
-allcourses = [["TMC1014", "2", "2.00", "099", "2.00", "2.00", "2.00", 1.1], ["TMC2813", "2", "2.00", "1", "4.00", "2.00", "4.00", 2.4] , ["TMC4013", "63", "3.9800", "2", "0.00", "0.00", "0.50", 9.1]];
-
-
-
-function set_courses(courses)
-{
-
-	// $("#courses").after('<div class="alert"><button type="button" class="close" data-dismiss="alert">×</button><strong>Warning!</strong></div>');
-
-	$(courses).each(function(i, val) {
-
-
-
-
-
-	$("#courses tbody").append('<tr><td title="Course code : Select from the list of suggestions"><input disabled class="tinp" value="'+val[0]+'"></td><td title="Number of students in the course">'+val[1]+'</td><td title="Number of lecturing hours in a week you do. Use zero(0) if you are not teaching this course">'+val[2]+'</td><td title="A single course lecturer would have 14 lecture weeks while a shared course has variable number of weeks one teaches in a semester. If you are just tutoring for the course, use zero(0) here">'+val[3]+'</td><td title="Number of tutorial classes you conduct in each week. If you only teach a few tutorial sessions in a semester, then divide it by 14 weeks. e.g. 5 tutorial slots in a sem = 5/14 = 0.36">'+val[4]+'</td><td title="Number of Labs conducted by you in a week. If you only teach a few lab sessions in a semester, then divide it by 14 weeks. e.g. 5 lab slots in a sem = 5/14 = 0.36">'+val[5]+'</td><td title="For a shared course, the ratio determined to reflect the assessment marking burden workload. A single course lecturer would get 1.0 where else, typically two lecturers will have a ratio of 0.5">'+val[6]+'</td><td class="loadrow" title="Index score of this course">'+val[7]+'</td><td class ="tremb" style="display:none"><button onclick="ontrem(this)" title = "Remove this entry">-</button></td></tr>');
-
-	 });
-
-
-
-
-	 $('#courses input').typeahead({source : availableTags ,minLength : 3, updater : function(e)
-	 		{
-
-	 			var finalsug = e.split(" ")[0];
-
-
-	 			return finalsug;
-
-	 		} 
-
-	 });
-
-
-}
 
 var meal_array;
 
@@ -105,22 +34,26 @@ function get_bf(table_id)
 	});
 	
 	
-	return meal_array;
+	return meal_array.join('');
 }
 
 
-function set_bf(marr,table_id)
+function set_bf(farr,table_id)
 {
 
+	marr = farr.split('')
 
 	$('#'+table_id+' td').not('#'+table_id+' td:nth-child(5n+1)').each(function(i,val){
 		
-		if(marr[i])
+		if(marr[i] == "1")
 			$(val).addClass('active')
 		else
 			$(val).removeClass('active')
 		
 	});
+	
+	
+	get_meal_total(table_id);
 	
 	
 }
@@ -134,175 +67,114 @@ function get_meal_total(table_id)
 
 	$('#'+table_id+' td').not('#'+table_id+' td:nth-child(5n+1)').each(function(i,val){
 		
-		if(marr[i])
+		if(marr[i] == "1")
 			totall = totall + parseInt($(val).find('.i_price').html());
 		
 	});
 	
 	$('#'+table_id).parent().find('h4 span').eq(0).html(totall);
+	
+	update_gr_total();
 
 }
 
+var choices_b, choices_l, choices_s, choices_d; 
 
-
-function get_superv()
+function get_and_send_choices()
 {
-	rows = [];
-
-
-	$('#superv tr').each(function(i, val) {
-
-		if(i==0)
-			return true;
-
-		eles = [];
-
-		$(this).children().each(function(j, vall) {
-
-			eles[j] = $(vall).html();
-
-
-		});
-
-		rows[i-1] = eles;
-
-
-	 });
-
-
-	console.log(rows);
-	return rows;
-
+	
+	choices_b = get_bf('courses');
+	choices_l = get_bf('superv');
+	choices_s = get_bf('researchtb');
+	choices_d = get_bf('admintb');
+	
+	s_id = sfid;
+	
+	$.get('save_choices.php?sid='+s_id+'&c1='+choices_b+'&c2='+choices_l+'&c3='+choices_s+'&c4='+choices_d);
+	
+	
 }
 
 
-function set_superv(rows)
+function retrive_choices()
 {
-
-
-	$(rows).each(function(i, val) {
-
-
-
-		$("#superv tbody").append('<tr><td>'+val[0]+'</td><td>'+val[1]+'</td><td>'+val[2]+'</td><td class="loadrow">'+val[3]+'</td></tr>');
-
-	 });
-
-
+	
+	
+	$.getJSON('send_choices.php?sid='+sfid, function(data){
+		
+		
+		set_bf(data[1], 'courses');
+		set_bf(data[2], 'superv');
+		set_bf(data[3], 'researchtb');
+		set_bf(data[4], 'admintb');
+		
+	});
+	
+	
 }
 
-function get_research()
+var grandtotal;
+
+
+
+function update_gr_total()
 {
-	rows = [];
+	grandtotal = 56 + parseFloat($("#totteach").html()) + parseFloat($("#totresearch").html()) + parseFloat($("#totsuper").html()) + parseFloat($("#totadmin").html()) ;
+	
+	
+	$('#tot_fix').html(grandtotal);
+	$('#totgrand').html(grandtotal);
 
-
-
-	$('#researchtb tr').each(function(i, val) {
-
-		if(i==0)
-			return true;
-
-		eles = [];
-
-		$(this).children().each(function(j, vall) {
-
-			eles[j] = $(vall).html();
-
-
-		});
-
-		rows[i-1] = eles;
-
-
-	 });
-
-
-	console.log(rows);
-	return rows;
-
-
+	
+	
+	
+	
+	drawChart(parseInt($("#totteach").html()),parseInt($("#totsuper").html()),parseInt($("#totresearch").html()),parseInt($("#totadmin").html()));	
+	
 }
 
 
-
-function set_research(rows)
+function drawChart(a,b,c,d)
 {
 
 
-	$(rows).each(function(i, val) {
+try
+  {
+  //Run some code here
 
 
+	var data = google.visualization.arrayToDataTable([
+	  ['Summary', 'Distribution'],
+	  ['Breakfast',    a],
+	  ['Lunch',      b],
+	  ['Snacks',  c],
+	  ['Dinner', d]
+	]);
 
-		$("#researchtb tbody").append('<tr><td>'+val[0]+'</td><td class="rolee">'+val[1]+'</td><td class="siz">'+val[2]+'</td><td>'+val[3]+'</td><td class="loadrow">'+val[4]+'</td><td class ="rremb" style="display:none"><button onclick="onrrem(this)" title = "Remove this entry">-</button></td></tr>');
+	}
 
-	 });
+	catch(err)
+	{
+		console.log('Sorry.. No Internet hence No Pie Chart');
+		console.log(err);
+		$('#chart_div').remove();
+		return false;
+	}
 
+	var options = {
+	  title: 'Meals Expenditure Distribution'
+	};
 
+	var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+	// 
+	// google.visualization.events.addListener(chart, 'error', function(err) {
+	//   alert('ERROR');
+	//   console.log(err);
+	//   
+	// });
+
+	chart.draw(data, options);
 }
-
-
-function get_admin()
-{
-	rows = [];
-
-
-	$('#admintb tr').each(function(i, val) {
-
-		if(i==0)
-			return true;
-
-		eles = [];
-
-		$(this).children().each(function(j, vall) {
-
-			eles[j] = $(vall).html();
-
-
-		});
-
-		rows[i-1] = eles;
-
-
-	 });
-
-
-	console.log(rows);
-	return rows;
-
-
-}
-
-
-function set_admin(rows)
-{
-
-
-	$(rows).each(function(i, val) {
-
-
-
-		$("#admintb tbody").append('<tr><td>'+val[0]+'</td><td>'+val[1]+'</td><td>'+val[2]+'</td><td>'+val[3]+'</td><td>'+val[4]+'</td><td class="loadrow">'+val[5]+'</td></tr>');
-
-	 });
-
-
-}
-
-
-
-
-
- function onsemselect()
- {
-
- 	semm = $('#sem').attr('value');
- 	$.cookie("semester",semm);
-
- 	clear_tables();
- 	write_tables(sfid,semm);
-
-
- }
 
 var grandtotal  =0;
 
@@ -391,6 +263,9 @@ function after_login_functions()
 
 
 		common_onready();
+		
+		
+		retrive_choices();
 
 
 	//		clear_tables();

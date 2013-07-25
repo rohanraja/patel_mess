@@ -100,18 +100,26 @@ table td.active
 		  		  									<b class="element select large" id="cur_tot" name="cur_tot"
 		  		  				onchange="oncheckchange()" style=
 		  		  				"margin-top: 20px; text-align:center; width:220px; font-size:20px" value="S2 12/13">
-		  TOTAL : Rs 120 per week
+		  TOTAL : Rs <span id="tot_fix">56</span> per week
 		  
 		  <br>
 		  <br>
 		  
-		  (Basic Rs 124 per week)
+		  (Basic Rs 56 per week)
 		  
 		  </b>
 		  		  			  				</div>
 		  
 		  		  			</li>
 
+
+		<li onclick="hover_admin()">		  		<div style="width:258px; text-align:center; margin-top:30px">	  											  
+		  		  
+		  		  			<b class="element select large">
+<button class="btn btn-primary btn-large" onclick="get_and_send_choices()">Update</button>
+		  		
+		  					</b>
+		  		  		</div></li>
 		</ul>
 		
 		
@@ -167,7 +175,7 @@ table td.active
 
 		
 	
-	<br><h4 class="total text-success">TOTAL : Rs <span id="totsuper"></span> per week (<span id="persuper"></span>%)</h4>
+	<br><h4 class="total text-success">TOTAL : Rs <span id="totsuper">0</span> per week (<span id="persuper"></span>%)</h4>
 
 </p>
 
@@ -199,7 +207,7 @@ table td.active
 
 		</tbody></table>
 
-	<br><h4 class="total text-success">TOTAL : Rs <span id="totresearch"></span> per week (<span id="perresearch"></span>%)</h4>
+	<br><h4 class="total text-success">TOTAL : Rs <span id="totresearch">0</span> per week (<span id="perresearch"></span>%)</h4>
 
 </p>
 
@@ -229,7 +237,7 @@ table td.active
 	</tbody></table>
 
 		
-	<br><h4 class="total text-success">TOTAL : Rs <span id="totadmin"></span> per week (<span id="peradmin"></span>%)</h4>
+	<br><h4 class="total text-success">TOTAL : Rs <span id="totadmin">0</span> per week (<span id="peradmin"></span>%)</h4>
 </p>
 
 
@@ -264,6 +272,18 @@ table td.active
  <script type="text/javascript" src="js/jsapi.js"></script>
 
 
+<script>
+	
+	
+
+	
+	//console.log("GOOGLE LOAD GERE");
+	console.log(google.load("visualization", "1", {packages:["corechart"]}));
+	
+	
+
+
+</script>
 <!--  <script src="js/formula_calc_edit.js"></script>		
  --> 
  <script src="js/mess_edit.js"></script>
