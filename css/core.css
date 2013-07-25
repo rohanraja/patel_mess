@@ -1,0 +1,72 @@
+#ritb input, select
+{
+	width: 300px;
+	background-color: white;
+	font-size: 16px;
+	height: 20px;
+
+		background-color:transparent;
+		border: none;
+
+	
+}
+
+
+#ritb
+{
+	border: none !important;
+	border-color: white !important;
+}
+
+table#ritb
+{
+	margin:0 auto;
+	
+}
+
+#ritb
+{
+	font-size: 15px;
+	
+}
+
+.labl
+{
+	width: 300px;
+}
+
+.ui-button .ui-button-text
+{
+ line-height: 0.6;
+}
+
+button
+{
+	text-align: center;
+}
+
+.cactive img 
+{
+	width: 15px;
+	content:url('img/Check-icon.png');
+}
+
+
+
+.cinactive input 
+{
+	color : grey;
+	cursor:pointer;
+}
+
+.cactive input
+{
+	cursor:pointer;
+	color : green;
+}
+
+
+#careastb tr:hover
+{
+	cursor: hand;
+}

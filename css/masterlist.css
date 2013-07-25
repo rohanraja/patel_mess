@@ -1,0 +1,43 @@
+.fixedchart.fixee
+{
+	position: fixed;
+	top: 90px;
+//	z-index: -10;
+}
+
+.fixedchart
+{
+
+margin-top: 10px;
+
+}
+
+#chart_div
+{
+	z-index: -10;
+	margin-left: -100px;
+}
+
+table
+{
+	z-index: 100;
+	margin-top: 15px;
+}
+
+tfoot tr td
+{
+	color:#941309;
+	font-weight: bold;
+	visibility: visible;
+}
+
+
+.singleName
+{
+	color: #941309;
+	font-weight: bold;
+	visibility: visible;
+	
+}
+
+

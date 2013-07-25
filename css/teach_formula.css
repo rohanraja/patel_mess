@@ -1,0 +1,135 @@
+th.freeth
+{
+	//border: none;
+	//font-size: 50px;
+
+	border: 1px solid;
+	border-collapse: separate !important;
+	border-left-color: rgb(221, 221, 221);
+	border-left-style: solid !important;
+	border-left-width: 1px !important;
+	border-top-color: rgb(221, 221, 221);
+	border-top-style: solid !important;
+	border-top-width: 1px !important;
+
+	border-color: rgb(221, 221, 221) !important;
+}
+
+
+
+
+
+.f_cmult
+{
+position: relative;
+	left: 30px;
+	top: 2px;
+
+}
+
+.f_divline
+{
+	position: absolute;
+/* 	margin-left: -117px;
+	margin-top: 12px; */
+	left:3px;
+	margin-top: 12px;
+	font-size: 30px;
+}
+
+.f_numdiv
+{
+
+	font-size: 25px;
+	position: absolute;
+	margin-top: 25px;
+	right: -25px;
+
+}
+
+.f_nummult
+{
+	font-size: 30px;
+	position: absolute;
+	top: 7px;
+	right: -70px;	
+}
+
+
+.f_majorplus
+{
+	position: absolute;
+	left: -35px;
+	top: 30px;
+}
+
+.f_majorplusmult
+{
+	position: absolute;
+	left: -35px;
+	top: 15px;
+}
+
+
+#f_br
+{
+	top : -100px;
+}
+
+
+.freeth:nth-child(1)
+{
+
+position: relative; 
+
+left: -86px;
+
+}
+
+.freeth:nth-child(2)
+{
+ position: relative; 
+ left: -59px;
+}
+
+
+.freeth:nth-child(3)
+{
+	left: -10px;
+}
+
+.freeth:nth-child(4)
+{
+	left: 17px;
+}
+
+
+
+.freeth:nth-child(5)
+{
+	left: 66px;
+	top: 15px;
+
+}
+
+.freeth:nth-child(6)
+{
+	left: 183px;
+	top: 15px;
+}
+
+
+.freeth:nth-child(7)
+{
+	left: 37px;
+	display: none;
+}
+
+.freeth:nth-child(8)
+{
+	left: 237px;
+	display: none;
+
+}
+
+

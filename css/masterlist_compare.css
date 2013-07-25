@@ -1,0 +1,23 @@
+#chart_div1 {
+	margin-left: -80px;
+}
+
+#chart_div2 {
+	margin-top: -400px;
+	margin-left: 350px;
+}
+
+#chart_div3 {
+	margin-left: -80px;
+	margin-top: -100px;
+}
+
+#chart_div4 {
+	margin-left: 350px;
+	margin-top: -400px;
+}
+
+.piechart
+{
+	//display: none;
+}

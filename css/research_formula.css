@@ -1,0 +1,72 @@
+th.freer
+{
+	//border: none;
+	//font-size: 50px;
+
+	border: 1px solid;
+	border-collapse: separate !important;
+	border-left-color: rgb(221, 221, 221);
+	border-left-style: solid !important;
+	border-left-width: 1px !important;
+	border-top-color: rgb(221, 221, 221);
+	border-top-style: solid !important;
+	border-top-width: 1px !important;
+	border-bottom-color: rgb(221, 221, 221);
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+
+	border-color: rgb(221, 221, 221) !important;
+}
+
+.freer:nth-child(1),.freer:nth-child(3)
+{
+
+display: none;
+
+}
+
+.freer:nth-child(4)
+{
+	top: 51px;
+	left : -218px;
+
+
+}
+
+.freer .f_divline
+{
+	left : -6px
+	
+}
+
+.freer:nth-child(2)
+{
+	left : -100px
+	
+}
+
+.freer:nth-child(5)
+{
+	left : -135px;
+	top:20px
+
+}
+
+
+
+.freer .f_majorplusr
+{
+	position: absolute;
+	//right: 135px;
+	top: 30px;
+	right : -45px;
+}
+ .r_if
+ {
+	 position: absolute;
+	 top: 7px;
+	 right : -200px;
+	 
+	 font-size: 25px;
+ }
+

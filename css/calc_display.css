@@ -1,0 +1,21 @@
+.loadrow
+{
+	background-color: #e9ff27;
+	color : blue;
+}
+
+.perrow
+{
+	color:#1a1555;
+}
+.total
+{
+	font-size: 14px;
+	color:#440111;
+	font-weight: bold;
+}
+
+.toprow
+{
+	font-variant: small-caps;
+}

@@ -1,0 +1,404 @@
+.numbox
+{
+	width: 130px;
+	height: 130px;
+	border: 1px #000 solid;
+
+
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+			border-radius: 10px;
+
+	text-align:center;
+	font-size : 30px;
+	line-height: 110%;
+	margin-top: auto;
+	padding: 10px;
+
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+	background-image: url('img/bg_var.jpg');
+	color:#cccccc;
+	
+	width: 100px;
+	height: 100px;
+	font-size: 22px;
+}
+
+.multi
+{
+	width: 70px;
+	height:130px;
+
+
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+			border-radius: 10px;
+
+	text-align:center;
+	font-size : 30px;
+	line-height: 110%;
+	margin-top: auto;
+	padding: 10px;
+
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+	background-image: url('img/multiply.ico');
+	background-position:center; 
+	background-size : 150%
+
+	background-repeat: no-repeat;
+	color:#cccccc;
+	
+	width: 10px;
+	background-size : 170%;
+	background-repeat: no-repeat;
+	
+	position: relative;
+	left : -20px
+	width: 100px;
+	height: 100px;
+	font-size: 22px;
+}
+
+
+
+div.span1
+{
+
+}
+
+.weight
+{
+	width: 100px;
+	height: 100px;
+//	border: 1px #000 solid;
+
+
+
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+			border-radius: 10px;
+
+	text-align:center;
+	font-size : 50px;
+	line-height: 110%;
+	margin-top: auto;
+	padding: 10px;
+
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+	//background-image: url('img/bg_wt.png');
+	color:#000000;
+	position: relative;
+	left : -40px;
+
+}
+
+
+div.atnorm .plusimg
+{
+	width: 130px;
+	height:130px;
+
+
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+			border-radius: 10px;
+
+	text-align:center;
+	font-size : 30px;
+	line-height: 110%;
+	margin-top: auto;
+	padding: 10px;
+
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+	background-image: url('img/plus3.png');
+	background-position:center; 
+	background-size : 150%
+
+	background-repeat: no-repeat;
+	color:#cccccc;
+
+	width: 10px;
+	background-size : 50%;
+	background-repeat: no-repeat;
+
+	position: absolute;
+	//left : -60px;
+	width: 60px;
+	height: 100px;
+	font-size: 22px;
+	margin-left: 320px;
+}
+
+.aterm
+{
+	//margin-left: -80px;
+	position:relative;
+	
+}
+.wholeterm
+{
+	
+}
+
+.aterm .divideline
+{
+	position: relative;
+	border: 2px #000 solid;
+	margin-top: 134px;
+	margin-left: 24px;
+
+}
+
+.aterm .divideline .weight
+{
+	position: relative;
+	margin-left: 150px;
+	margin-top: -15px;
+}
+
+.atdiv
+{
+	position: relative;
+	margin-top: 80px;
+}
+
+.atnorm
+{
+	position: relative;
+}
+
+div.atnorm img {
+
+	position: absolute;
+
+    width:20px;
+    margin-left: -55px;
+    height: 150px;
+    margin-top: -19px;
+}
+
+div.atdiv img
+{
+	display: block;
+	position: absolute;
+	width:20px;
+	margin-top: -19px;
+
+	height: 250px;
+	margin-left: 380px;
+	
+	margin-right: 10px;
+}
+
+div.aterm.span4 img.brl
+{
+	position: absolute;
+	margin-left: -5px;
+}
+
+div.atdiv.span4 img.brl
+{
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+
+
+
+div.atdiv .plusimg
+{
+	width: 130px;
+	height:130px;
+
+	text-align:center;
+	font-size : 30px;
+	line-height: 110%;
+	margin-top: auto;
+	padding: 10px;
+
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+	background-image: url('img/plus3.png');
+	background-position:center; 
+	background-size : 150%
+
+	background-repeat: no-repeat;
+	color:#cccccc;
+
+	width: 10px;
+	background-size : 50%;
+	background-repeat: no-repeat;
+
+	position: absolute;
+	//left : -60px;
+	width: 60px;
+	height: 100px;
+	font-size: 22px;
+	margin-left: 393px;
+	margin-top: -84px;
+}
+
+.atdiv2
+{
+	margin-left: 100px;
+}
+
+
+div.container
+{
+}
+
+div.linee1
+{
+	margin-left: 220px;
+}
+
+div.linee2
+{
+	margin-left: 148px;
+	margin-top: 50px;
+}
+
+#lineimg
+{
+	width: 130px;
+	height:130px;
+	
+	text-align:center;
+	font-size : 30px;
+	line-height: 110%;
+	margin-top: auto;
+	padding: 10px;
+	
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+	background-image: url('img/plus3.png');
+	background-position:center; 
+	background-size : 150%
+	
+	background-repeat: no-repeat;
+	color:#cccccc;
+	
+	width: 10px;
+	background-size : 50%;
+	background-repeat: no-repeat;
+	
+	position: absolute;
+	//left : -60px;
+	width: 60px;
+	height: 100px;
+	font-size: 22px;
+	margin-left: 570px;
+	margin-top: 130px;
+}
+

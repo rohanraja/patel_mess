@@ -1,0 +1,45 @@
+th.freea
+{
+	//border: none;
+	//font-size: 50px;
+
+	border: 1px solid;
+	border-collapse: separate !important;
+	border-left-color: rgb(221, 221, 221);
+	border-left-style: solid !important;
+	border-left-width: 1px !important;
+	border-top-color: rgb(221, 221, 221);
+	border-top-style: solid !important;
+	border-top-width: 1px !important;
+	border-bottom-color: rgb(221, 221, 221);
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+
+	border-color: rgb(221, 221, 221) !important;
+}
+
+
+.freea:nth-child(2),.freea:nth-child(4),.freea:nth-child(6)
+{
+
+display: none;
+
+}
+
+
+.freea .f_majorplus
+{
+	top: 12px;
+}
+
+
+.freea:nth-child(3)
+{
+	left : 54px
+}
+
+
+.freea:nth-child(5)
+{
+	left : 108px
+}

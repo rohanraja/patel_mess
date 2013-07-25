@@ -1,0 +1,55 @@
+th.frees
+{
+	//border: none;
+	//font-size: 50px;
+
+	border: 1px solid;
+	border-collapse: separate !important;
+	border-left-color: rgb(221, 221, 221);
+	border-left-style: solid !important;
+	border-left-width: 1px !important;
+	border-top-color: rgb(221, 221, 221);
+	border-top-style: solid !important;
+	border-top-width: 1px !important;
+
+	border-color: rgb(221, 221, 221) !important;
+}
+
+
+
+
+.frees:nth-child(1)
+{
+
+display: none;
+
+}
+
+.frees:nth-child(2)
+{
+
+display: none;
+
+}
+
+.frees:nth-child(5)
+{
+
+display: none;
+
+}
+
+
+.frees:nth-child(3)
+{
+	left: -10px;
+}
+
+.frees:nth-child(4)
+{
+	left: 20px;
+}
+
+
+
+
