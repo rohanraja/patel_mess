@@ -5,8 +5,8 @@
 function create_item_td($f_name, $f_price)
 {
 	
-	if(!$f_name)
-		return '<td></td>';
+	if(!$f_price)
+		return '<td onclick="" class="no_entry" style=""><b class="">None'.'</b><a href="#" ><img src="css/img/Check-icon.png" class="img-rounded"></a><br>Rs <span class="i_price">0'.'</span></td>';
 		
 	return '<td onclick="on_td_click(this)" class="" style=""><b class="">'.$f_name.'</b><a href="#" ><img src="css/img/Check-icon.png" class="img-rounded"></a><br>Rs <span class="i_price">'.$f_price.'</span></td>';
 
@@ -40,7 +40,7 @@ function do_table($type)
 	
 	$tbbname = "meals_".$type ;
 	
-			$result_db = mysql_query("SELECT * FROM $tbbname");
+			$result_db = mysql_query("SELECT * FROM $tbbname ORDER BY idx ASC");
 	
 			while ($row = mysql_fetch_array($result_db)) {
 	

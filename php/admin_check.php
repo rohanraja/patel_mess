@@ -7,7 +7,7 @@ include ('../mysqlconnect.php');
 $id=$_GET['id'];
 
 
-$tbl="pat_mess.w_staff"; // Table name
+$tbl="pat_mess.students"; // Table name
 
 
 $result_names = mysql_query("SELECT * FROM $tbl WHERE staff_ID LIKE '$id';");

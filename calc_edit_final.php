@@ -116,7 +116,7 @@ table td.active
 		<li onclick="hover_admin()">		  		<div style="width:258px; text-align:center; margin-top:30px">	  											  
 		  		  
 		  		  			<b class="element select large">
-<button class="btn btn-primary btn-large" onclick="get_and_send_choices()">Update</button>
+<button class="btn btn-primary btn-large" onclick="get_and_send_choices()">Save</button>
 		  		
 		  					</b>
 		  		  		</div></li>

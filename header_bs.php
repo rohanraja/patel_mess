@@ -167,7 +167,7 @@ table
 		
 		<!-- Text input-->
 		<div class="control-group" style=""> 
-		  <label class="control-label" for="login_sid">Staff ID : </label>
+		  <label class="control-label" for="login_sid">Roll No : </label>
 		  <div class="controls">
 			<input id="login_sid" name="login_sid" type="text" placeholder="Enter your ID" class="input-medium" required="" style="" onKeyPress="submitenter(this,event)">
 		

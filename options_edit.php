@@ -142,6 +142,9 @@ table td.active
 
 	<br><h4 class="total text-success">TOTAL : Rs <span id="totteach">0</span> per week (<span id="perteach"></span>%)</h4>
 </p>
+
+
+<button class="btn btn-primary" onclick="get_send_options('courses', 'b')">Submit</button>
 </section>
 
 <hr>

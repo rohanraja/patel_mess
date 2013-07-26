@@ -9,7 +9,7 @@ $pass = $_GET['pass'];
 $passnew = $_GET['newpass'];
 
 
-$tbl="pat_mess.w_staff"; // Table name
+$tbl="pat_mess.students"; // Table name
 
 
 $result_names = mysql_query("SELECT * FROM $tbl WHERE staff_ID LIKE '$id' AND password LIKE '$pass';");

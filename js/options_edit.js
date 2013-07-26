@@ -61,12 +61,21 @@ function send_options(arr, type)
 	
 	$.ajax({
 		type : "POST",
-		url : "options_edit.php",
+		url : "options_save.php",
 		dataType : 'json',
 		data : {
 		ardata : JSON.stringify(arr), type : type
 				}
 		});
+	
+	
+}
+
+function get_send_options(table_id, type)
+{
+	tmpar = get_options(table_id);
+	
+	send_options(tmpar, type);
 	
 	
 }

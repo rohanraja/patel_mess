@@ -266,6 +266,8 @@ function after_login_functions()
 		
 		
 		retrive_choices();
+		
+		$('.no_entry').html('');
 
 
 	//		clear_tables();

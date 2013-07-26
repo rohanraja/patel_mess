@@ -8,7 +8,7 @@ $id=$_GET['id'];
 $pass = $_GET['pass'];
 
 
-$tbl="pat_mess.w_staff"; // Table name
+$tbl="pat_mess.students"; // Table name
 
 
 $result_names = mysql_query("SELECT * FROM $tbl WHERE staff_ID LIKE '$id' AND password LIKE '$pass';");
