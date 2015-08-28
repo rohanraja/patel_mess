@@ -1,6 +1,6 @@
 <head>
 	<meta charset="utf-8">
-	<title>WeWaIC</title>
+	<title>Patel Mess</title>
 
 	<!-- Le styles -->
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
