@@ -77,6 +77,8 @@ function get_send_options(table_id, type)
 	
 	send_options(tmpar, type);
 	
+	alert('Updated Meals type : ' + type);
+	
 	
 }
 
@@ -202,6 +204,9 @@ function after_login_functions()
 	//	write_tables(sfid,semm);
 
 		//admin_formula();
+		
+				if(!window.location.hash)
+			window.location = './options_edit.php?q=' + sfid+ '#rollno';
 }
 
 var grandtotal;

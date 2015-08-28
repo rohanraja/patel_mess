@@ -1,14 +1,14 @@
 <?php
 
-	include('connection_manager.php');
+	include('mysqlconnect.php');
 
 function create_item_td($f_name, $f_price)
 {
 	
 	if(!$f_price)
-		return '<td onclick="" class="no_entry" style=""><b class="">None'.'</b><a href="#" ><img src="css/img/Check-icon.png" class="img-rounded"></a><br>Rs <span class="i_price">0'.'</span></td>';
+		return '<td onclick="" class="no_entry" style=""><b class="">None'.'</b><a href="#" ><img src="css/img/Check-icon.png" class="img-rounded"></a><br>Rs. <span class="i_price">0'.'</span></td>';
 		
-	return '<td onclick="on_td_click(this)" class="" style=""><b class="">'.$f_name.'</b><a href="#" ><img src="css/img/Check-icon.png" class="img-rounded"></a><br>Rs <span class="i_price">'.$f_price.'</span></td>';
+	return '<td onclick="on_td_click(this)" class="" style=""><b class="">'.$f_name.'</b><a href="#" ><img src="css/img/Check-icon.png" class="img-rounded"></a><br>Rs. <span class="i_price">'.$f_price.'</span></td>';
 
 
 }
@@ -36,7 +36,15 @@ function create_item_tr($dayy, $meal, $i)
 
 function do_table($type)
 {
-	$day  = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+	$day  = array();
+	$day[] = "Monday" ;
+	$day[] = "Tuesday" ;
+	$day[] = "Wednesday" ;
+	$day[] = "Thursday" ;
+	$day[] = "Friday" ;
+	$day[] = "Saturday" ;
+	$day[] = "Sunday" ;
+	//["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 	
 	$tbbname = "meals_".$type ;
 	

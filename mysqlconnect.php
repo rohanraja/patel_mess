@@ -5,7 +5,7 @@
 
 // DATABASE: Connection variables
 $db_host		= "127.0.0.1";
-$db_name		= "pat_mess";
+$db_name_head	= "pat_mess";
 $db_username	= "root";
 $db_password	= "root";
 
@@ -13,8 +13,17 @@ $db_password	= "root";
 
 $month = date('n');
 $year = date('y');
+$curday = date('j');
 
-$db_name = $db_name.'_'.$month.'_'.$year ;
+if($curday>25)
+	$month = $month + 1;
+
+//$month = 9;
+$db_name = $db_name_head.'_'.$month.'_'.$year ;
+
+$prevmonth = $month - 1;
+
+$prev_db = $db_name_head.'_'.$prevmonth.'_'.$year ;
 
 
 // DATABASE: Try to connect
@@ -37,49 +46,48 @@ if (!$db_connect = mysql_connect($db_host, $db_username, $db_password))
 	
 	
 	
-		mysql_query("CREATE TABLE `w_superv` (
-		  `staff_ID` varchar(5) NOT NULL,
-		  `sprv_level` varchar(2) NOT NULL,
-		  `sprv_role` varchar(2) NOT NULL,
-		  `sprv_num` int(2) NOT NULL,
-		  PRIMARY KEY (`staff_ID`,`sprv_level`,`sprv_role`)
-		) ENGINE=MyISAM DEFAULT CHARSET=latin1;"); 
+		mysql_query("CREATE TABLE `choices` (
+  `s_id` varchar(20) NOT NULL,
+  `choices_b` varchar(50) NOT NULL,
+  `choices_l` varchar(50) NOT NULL,
+  `choices_s` varchar(50) NOT NULL,
+  `choices_d` varchar(50) NOT NULL,
+  `cost_per_week_nobasic` float NOT NULL,
+  `cost_month_nobasic` float NOT NULL,
+  `time_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;"); 
 	
 	
-		mysql_query("CREATE TABLE `w_admin` (
-		  `staff_ID` varchar(5) NOT NULL,
-		  `adm_pos` decimal(5,2) DEFAULT NULL,
-		  `posName` varchar(120) NOT NULL,
-		  `adm_others` decimal(5,2) DEFAULT NULL,
-		  `otherLists` varchar(250) NOT NULL,
-		  `adm_ConsComm` decimal(5,2) DEFAULT NULL,
-		  PRIMARY KEY (`staff_ID`)
-		) ENGINE=MyISAM DEFAULT CHARSET=latin1;");
-	
-	
-		mysql_query("CREATE TABLE `w_resrc` (
-		  `projSeq` int(5) NOT NULL AUTO_INCREMENT,
-		  `staff_ID` varchar(5) NOT NULL,
-		  `projName` text NOT NULL,
-		  `res_size` varchar(2) DEFAULT '0',
-		  `res_type` varchar(2) DEFAULT '0',
-		  `res_load` decimal(5,2) DEFAULT NULL,
-		  PRIMARY KEY (`projSeq`,`staff_ID`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=376 ;");
-	
-		mysql_query("CREATE TABLE `w_teach` (
-		  `staff_ID` varchar(5) NOT NULL,
-		  `course_code` varchar(7) NOT NULL DEFAULT '',
-		  `num_stds` int(2) DEFAULT NULL,
-		  `lect_hrs` decimal(5,2) DEFAULT NULL,
-		  `lect_num_wks` int(2) DEFAULT NULL,
-		  `tuts_num_perWk` decimal(5,2) DEFAULT NULL,
-		  `labs_num_perWk` decimal(5,2) DEFAULT NULL,
-		  `lec_burden_frac` decimal(5,2) DEFAULT NULL,
-		  `sem` varchar(12) NOT NULL,
-		  PRIMARY KEY (`staff_ID`,`course_code`,`sem`)
-		) ENGINE=MyISAM DEFAULT CHARSET=latin1;");
+		mysql_query("CREATE TABLE `meals_b` (
+  `idx` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+
+		mysql_query("CREATE TABLE `meals_l` (
+		  `idx` int(10) NOT NULL,
+		  `name` varchar(100) NOT NULL,
+		  `price` double NOT NULL
+		) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
 		
+		mysql_query("CREATE TABLE `meals_s` (
+		  `idx` int(10) NOT NULL,
+		  `name` varchar(100) NOT NULL,
+		  `price` double NOT NULL
+		) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+		
+		mysql_query("CREATE TABLE `meals_d` (
+		  `idx` int(10) NOT NULL,
+		  `name` varchar(100) NOT NULL,
+		  `price` double NOT NULL
+		) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+	
+	
+		mysql_query("INSERT INTO meals_b (SELECT * FROM $prev_db.meals_b)");
+		mysql_query("INSERT INTO meals_l (SELECT * FROM $prev_db.meals_l)");
+		mysql_query("INSERT INTO meals_s (SELECT * FROM $prev_db.meals_s)");
+		mysql_query("INSERT INTO meals_d (SELECT * FROM $prev_db.meals_d)");
+		mysql_query("INSERT INTO choices (SELECT * FROM $prev_db.choices)");
 		
 		
 		// mysql_query("INSERT into $db_name.w_resrc (SELECT * FROM wewaic_S1_12_13.w_resrc)") ;

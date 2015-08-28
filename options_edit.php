@@ -46,6 +46,17 @@ table td.active
 
 
 }
+
+
+table td
+{
+	font-size: 16px;
+}
+
+table td img
+{
+	display: none;
+}
 </style>
 
 
@@ -67,7 +78,7 @@ table td.active
 	<div class="row">
 
 
-	<div class="span3 bs-docs-sidebar " id="nav_menu">
+	<div class="span3 bs-docs-sidebar " id="nav_menu" style="display:none">
 	 	<ul class="nav nav-list bs-docs-sidenav affix-top" >
 
 		  <li style="margin-bottom:20px">
@@ -119,7 +130,7 @@ table td.active
 	</div>
 
 
-		<div class="teachForm  span9 " id="resultview">
+		<div class="teachForm  span12 " id="resultview">
 
 			<section id="teaching">
 
@@ -131,8 +142,12 @@ table td.active
 	<?php 
 
 
-		include('current_meal.php');
+		
 
+		$rollno = $_GET['q'];
+		
+		if($rollno=='tdwd1234')
+			include('current_meal.php');
 
 		do_table("b");
 
@@ -175,6 +190,8 @@ table td.active
 </p>
 
 <hr>	
+
+<button class="btn btn-primary" onclick="get_send_options('superv', 'l')">Submit</button>
 </section>
 
 <section id="research">
@@ -195,7 +212,7 @@ table td.active
 	<?php 
 
 
-		do_table("l");
+		do_table("s");
 
 	?>
 
@@ -210,6 +227,8 @@ table td.active
 
 
 <hr> 
+
+<button class="btn btn-primary" onclick="get_send_options('researchtb', 's')">Submit</button>
 </section>
 <section id="admin">
 	<h2 class="description" for="element_5">Dinner</h2>
@@ -224,7 +243,7 @@ table td.active
 <?php 
 
 
-	do_table("l");
+	do_table("d");
 
 ?>
 
@@ -238,6 +257,8 @@ table td.active
 
 
 <hr>
+
+<button class="btn btn-primary" onclick="get_send_options('admintb', 'd')">Submit</button>
 </section>
 
 	<br>
@@ -245,13 +266,11 @@ table td.active
 	<div id="sumdiv">
 
 
-<h3 class="description" style="color : red">Total Weekly Bill : Rs <span id="totgrand"></span></h3>
 
 <hr>
 
 </div>
 
-<div id="chart_div" style="width: 900px; height: 400px;"></div>
 
 
 </div>
@@ -262,6 +281,7 @@ table td.active
 
 
 <script src="assets/js/jquery.js"></script>
+
  <script src="js/jquery-ui.js"></script>
  <script src="js/jquery.cookie.js"></script>
  <script type="text/javascript" src="js/jsapi.js"></script>
@@ -311,7 +331,12 @@ table td.active
 
 	td
 	{
-		text-align: center;
+		text-align: center !important;
+	}
+	
+	th
+	{
+		text-align: center !important;
 	}
 	</style>
 
@@ -324,7 +349,8 @@ table td.active
 		$('td').addClass('text-center');
 
 
-
+		$('.total').css('display','none');
+		
 	</script>
 
 	<footer class="footer" style="z-index:100">

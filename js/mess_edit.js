@@ -90,11 +90,22 @@ function get_and_send_choices()
 	
 	s_id = sfid;
 	
-	$.get('save_choices.php?sid='+s_id+'&c1='+choices_b+'&c2='+choices_l+'&c3='+choices_s+'&c4='+choices_d);
+	$.get('save_choices.php?sid='+s_id+'&c1='+choices_b+'&c2='+choices_l+'&c3='+choices_s+'&c4='+choices_d , function(data){
+		
+		
+		$('.month_total').html(data);
+		
+	});
 	
 	
 }
 
+function get_and_send_choices_save()
+{
+	
+	get_and_send_choices();
+	alert('Choices Saved!');
+}
 
 function retrive_choices()
 {
@@ -115,17 +126,17 @@ function retrive_choices()
 
 var grandtotal;
 
-
+var basic_cost = 0 ;
 
 function update_gr_total()
 {
-	grandtotal = 56 + parseFloat($("#totteach").html()) + parseFloat($("#totresearch").html()) + parseFloat($("#totsuper").html()) + parseFloat($("#totadmin").html()) ;
+	grandtotal =  basic_cost + parseFloat($("#totteach").html()) + parseFloat($("#totresearch").html()) + parseFloat($("#totsuper").html()) + parseFloat($("#totadmin").html()) ;
 	
 	
 	$('#tot_fix').html(grandtotal);
 	$('#totgrand').html(grandtotal);
 
-	
+	$('.basic_display').html(basic_cost);
 	
 	
 	
@@ -268,6 +279,11 @@ function after_login_functions()
 		retrive_choices();
 		
 		$('.no_entry').html('');
+
+
+
+		get_and_send_choices();
+		
 
 
 	//		clear_tables();

@@ -233,36 +233,7 @@ function chksession2(){
  function onsem_init()
  {
 	 
-	 $.ajax({
-	  url: 'current_sem.php',
-	  type: 'get',
-	  dataType: 'html',
-	  async: false,
-	  success: function(data) {
-		 
-		 $('#sem').attr('value',data);
-		 
-		 
-		 parts = data.split(' ');
-		 semno = parts[0][1];
-		 if(semno=="2")
-		  {
-		  	fullsem = "Sem 2, 20" + parts[1] ;
-		 }
-		  	
-		  else
-		  {
-		  	fullsem = "Sem 1, 20" + parts[1] ;
-		 }
-		 
-		$('#sem').html(fullsem+" ");
-		
-		
-		$.cookie('semester', data);
 
-		 
-		 
-	 }});
  }
  
  

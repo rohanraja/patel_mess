@@ -54,6 +54,9 @@ table
 	text-align: left;
 }
 
+
+
+
 </style>
 
 
@@ -101,12 +104,11 @@ table
 				<a href="./onetime.php">One Time form</a>
 			  </li> -->
 			  <li id="li_v">
-				<a href="./calc_edit_final.php">My Mess Options</a>
+				<a href="./index.php">My Mess Options</a>
+			  </li><li id="li_v">
+				<a href="./register.php">New Student Registration</a>
 			  </li>
-			  
-			  <li id="li_v">
-			  	<a href="./options_edit.php">Bubbe Ka Page</a>
-			    </li>
+
 
 			</ul>
 		  </div>
@@ -141,7 +143,7 @@ table
 	<header class="jumbotron subhead" id="overview">
 	  <div class="container">
 
-		<h3><a>Patel Hall of Residence : They dream we dare</a></h3>
+		<h3><a href='/'>Patel Hall of Residence : They dream we dare</a></h3>
 		<h2>Mess Options</h2>
 
 	  </div>
@@ -154,7 +156,7 @@ table
 	<!-- Modal -->
 	<div id="myModal" style="" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-header">
-		<h3 id="myModalLabel">Login to your Account</h3>
+		<h3 id="myModalLabel">Login to your Account</h3> <h2><a href='register.php' style='color:red;'>2nd Years - Register</a></h2>
 	  </div>
 	  <div class="modal-body">
 		
@@ -197,6 +199,29 @@ table
 	  </div>
 	</div>
 
+
+
+
+
+
+
+
+	<div id="roh_modal" style="" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Rohan Raja</h3>
+		
+	  </div>
+	  <div class="modal-body">
+		
+		
+	
+	
+	
+	
+	  </div>
+
+	</div>
 
 
 

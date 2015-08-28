@@ -46,7 +46,7 @@ function on_change_confirm()
 	   		if(rett==1)
 	   		{
 				alert("Password Changed Sucessfully");
-				window.location = "./calc_edit_final.php" ;
+				window.location = "./index.php" ;
 			}
 			
 			else

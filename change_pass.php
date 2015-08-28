@@ -142,8 +142,13 @@
 </html>
 	<footer class="footer" style="z-index:100">
 		<div class="container">
-			<p>All contents are (c) Copyright 2011 - 2012, FCSIT, Universiti Malaysia Sarawak. All rights Reserved<!-- <a href=
-			"http://www.fcsit.unimas.my/" target="_blank"><strong>Faculty of
-			Computer Science, UNIMAS</strong></a> --></p>
+			<p>All contents are (c) Copyright 2013 - 2014, Patel Hall of Residence, Indian Institute of Technology, Kharagpur. All rights Reserved 
+			
+			<br>
+			Created by : 
+			<a href="#roh_modal" role="button" class="" data-toggle="modal"><b>Rohan Raja : rohanraja9@gmail.com</a><br>
+				<a href="#jot_modal" role="button" class="" data-toggle="modal">Jot Sarup : sarup.jot@gmail.com</a></b>
+			
+				</p>
 		</div>
 	</footer>
